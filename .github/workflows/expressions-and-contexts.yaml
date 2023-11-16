@@ -26,4 +26,4 @@ jobs:
       - name: List the Repo Name
         run: |
           echo '${{ toJson(github.repository) }}'
-          echo '${{ toJson(runner.workspace) }}'
+          echo '${{ runner.workspace }}'
