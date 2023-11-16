@@ -24,4 +24,6 @@ jobs:
           echo '${{ toJson(steps) }}' 
           echo '${{ toJson(runner) }}'
       - name: List the Repo Name
-        run: echo '${{ toJson(github.repository) }}/.github'
+        run: |
+          echo '${{ toJson(github.repository) }}'
+          echo '${{ toJson(runner.workspace) }}'
