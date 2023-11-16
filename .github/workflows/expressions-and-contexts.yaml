@@ -27,12 +27,3 @@ jobs:
         run: |
           echo '${{ toJson(github.repository) }}'
           echo '${{ github.path }}/.github'
-      - name: Check Directory
-      - id: check-directory
-      shell: bash
-      run: |
-        if [ -d "${{ inputs.directory-path }}" ]; then
-          echo "directory-exists=true" >> $GITHUB_OUTPUT
-        fi
-FooterBooz Allen Hamilton
-Booz Allen Hamilton
