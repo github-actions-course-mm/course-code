@@ -26,4 +26,4 @@ jobs:
       - name: List the Repo Name
         run: |
           echo '${{ toJson(github.repository) }}'
-          echo '${{ github.path }}/.github'
+          echo '${{ github.repository }}'
