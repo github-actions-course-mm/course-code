@@ -3,10 +3,13 @@ on: [push]
 
 jobs:
   node-matrix:
+    continue-on-error: false # this syntax will prevent a new job to run if a previous fail
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version: [14, 15, 16]
+    fail-fast: false # this syntax will prevent running jobs if any job in the matrix fail
+    # max-parallel: 3
     runs-on: ${{ matrix.os }}
     steps:
       - run: node -v
