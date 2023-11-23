@@ -10,7 +10,7 @@ jobs:
       - name: Fail
         id: step-2
         run: exit 1
-      - name: Runs on Failure
+      - name: Runs on step 2 Failure
         if: failure() && steps.step-2.conclusion == 'failure'
         run: echo 'Step 2 has failed'
       - name: Runs on Success
