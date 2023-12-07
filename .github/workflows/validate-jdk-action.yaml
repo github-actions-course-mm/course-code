@@ -16,3 +16,4 @@ jobs:
           java-version: "17.0.9"
           distribution: "temurin"
           cache: "maven"
+          cache-dependency-path: "${{ github.workspace }}/pom.xml"
