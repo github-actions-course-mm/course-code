@@ -11,15 +11,24 @@ jobs:
           fetch-depth: 0
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v3
         with:
           java-version: "17.0.9"
           distribution: "temurin"
           cache: "maven"
           cache-dependency-path: "${{ github.workspace }}/pom.xml"
 
+          - name: Cache Gradle packages
+          uses: actions/cache@v3
+          with:
+            path: |
+              ~/.gradle/caches
+              ~/.gradle/wrapper
+
+
       - name: Debug Cache Dir
         run: |
           echo ${{ github.workspace }}
           pwd
           ls -al
+          echo ~/.m2
