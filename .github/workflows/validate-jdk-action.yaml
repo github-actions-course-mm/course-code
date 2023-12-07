@@ -17,3 +17,9 @@ jobs:
           distribution: "temurin"
           cache: "maven"
           cache-dependency-path: "${{ github.workspace }}/pom.xml"
+
+      - name: Debug Cache Dir
+        run: |
+          echo ${{ github.workspace }}
+          pwd
+          ls -al
