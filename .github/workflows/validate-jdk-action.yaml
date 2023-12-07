@@ -16,7 +16,7 @@ jobs:
           java-version: "17.0.9"
           distribution: "temurin"
           cache: "maven"
-          cache-dependency-path: "${{ github.workspace }}/pom.xml"
+          #cache-dependency-path: "${{ github.workspace }}/pom.xml"
 
           - name: Cache Gradle packages
           uses: actions/cache@v3
