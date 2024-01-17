@@ -2,10 +2,10 @@ name: SemVer
 
 on:
   push:
+    branches:
+        - develoop
     tags:
       - "*"
-    branches:
-      - develoop
 
 jobs:
   update-semver-tags:
