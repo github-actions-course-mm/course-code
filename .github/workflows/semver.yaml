@@ -3,7 +3,7 @@ name: SemVer
 on:
   push:
     branches:
-        - develoop
+      - develoop
     tags:
       - "*"
 
