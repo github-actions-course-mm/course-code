@@ -5,7 +5,7 @@ on:
     inputs:
       os:
         description: Operating Systems
-        default: "windows-latest, ubuntu-latest"
+        default: "windows-latest,ubuntu-latest"
         type: string
       node-version:
         description: Node Version
@@ -21,8 +21,7 @@ jobs:
       - uses: actions/github-script@v6
         id: matrix-arrays
         with:
-          script: "return {os: context.payload.inputs['os'].split('.'),
-          'node-version': context.payload.inputs['node-version'].split('.') }"
+          script: "return {os: context.payload.inputs['os'].split(','), 'node-version': context.payload.inputs['node-version'].split(',') }"
           result-encoding: json
       - run: echo '${{ steps.matrix-arrays.outputs.resul }}'
       - run: echo "step-output=value" >> $GITHUB_OUTPUT
